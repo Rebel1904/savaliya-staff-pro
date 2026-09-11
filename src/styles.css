@@ -59,6 +59,18 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-brand: var(--brand);
+  --color-brand-deep: var(--brand-deep);
+  --color-leaf: var(--leaf);
+  --color-ink: var(--ink);
+  --color-mist: var(--mist);
+  --color-sky-wash: var(--sky-wash);
+  --color-amber-wash: var(--amber-wash);
+  --color-glass: var(--glass);
+  --color-glass-border: var(--glass-border);
+  --font-sans: "Inter", "Noto Sans Devanagari", sans-serif;
+  --font-dev: "Noto Sans Devanagari", "Inter", sans-serif;
+  --font-display: "Playfair Display", serif;
 }
 
 :root {
@@ -95,6 +107,16 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
+  --brand: oklch(0.68 0.16 54);
+  --brand-deep: oklch(0.48 0.14 45);
+  --leaf: oklch(0.48 0.12 153);
+  --ink: oklch(0.27 0.04 245);
+  --mist: oklch(0.95 0.02 245);
+  --sky-wash: oklch(0.96 0.03 235);
+  --amber-wash: oklch(0.96 0.04 85);
+  --glass: oklch(1 0 0 / 58%);
+  --glass-border: oklch(1 0 0 / 72%);
+  --app-shell: linear-gradient(135deg, var(--sky-wash), var(--background), var(--amber-wash));
 }
 
 .dark {
@@ -130,6 +152,16 @@
   --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
+  --brand: oklch(0.73 0.16 54);
+  --brand-deep: oklch(0.62 0.14 45);
+  --leaf: oklch(0.65 0.12 153);
+  --ink: oklch(0.92 0.02 245);
+  --mist: oklch(0.26 0.03 245);
+  --sky-wash: oklch(0.18 0.04 245);
+  --amber-wash: oklch(0.2 0.04 85);
+  --glass: oklch(0.2 0.03 245 / 72%);
+  --glass-border: oklch(1 0 0 / 14%);
+  --app-shell: linear-gradient(135deg, var(--sky-wash), var(--background), var(--amber-wash));
 }
 
 @layer base {
@@ -140,5 +172,25 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
   }
+}
+
+@utility app-shell {
+  background: var(--app-shell);
+}
+
+@utility glass-panel {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 16px 42px color-mix(in oklab, var(--ink) 6%, transparent);
+  backdrop-filter: blur(18px);
+}
+
+@utility dev {
+  font-family: var(--font-dev);
+}
+
+@utility serif {
+  font-family: var(--font-display);
 }
