@@ -1,0 +1,4 @@
+- [ ] Build the Hindi-first app shell and dashboard
+- [ ] Add worker, event, attendance, payment, advance, ledger, and reports views
+- [ ] Wire the demo flow with live pending-payment updates
+- [ ] Verify the preview on desktop and mobile
